@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<stdbool.h>
 
 typedef struct Node
 {
@@ -79,6 +80,31 @@ int item_exists(Node* head, char* name) {
         head = head->link;
     }
     return 0;
+}
+
+//To search and print existing item
+void search_nameIn_list(Node*head,char search_name[]){
+    if(head==NULL){
+        printf("List is Empty\n");
+        return;
+    }
+    else{
+        Node*temp=head;
+        while(temp!=NULL){
+            if(strcmp(temp->Item_Name,search_name)==0){
+                printf("\n*****ITEM DETAIL*****\n\n");
+                printf("Item Name     : %s\n",temp->Item_Name);
+                printf("Item Quantity : %.3f\n",temp->Quantity);
+                printf("Item Unit     : %s\n",temp->Unit);
+                printf("Item Rate     : Rs %.2f\n",temp->Rate);
+                printf("Item Amount   : Rs %.2f\n",temp->Amount);
+                printf("----------------------------------\n");
+                return;
+            }
+            temp=temp->link;
+        }
+        printf("Item not found.\nCheck name and try again.\n");
+    }
 }
 
 //To calculat total amount of all item
@@ -162,6 +188,7 @@ int main(){
                     if(check==4){
                         int t;
                         printf("1.For print Total Amount of all item\n");
+                        printf("2.For search/check item by name\n");
                         printf("Any other numeric key to exit\n");
                         printf("\nEnter choice: ");
                         scanf("%d",&t);
@@ -173,6 +200,13 @@ int main(){
                             else{
                                 printf("The total amount of all item is Rs %.2f\n\n",Total_Amount);
                             }
+                        }
+                        if(t==2){
+                            char search_name[100];
+                            printf("Enter item you want to check/search : ");
+                            scanf(" %[^\n]",search_name);
+                            search_nameIn_list(head,search_name);
+                            printf("\n");
                         }
                     }
                     else{
