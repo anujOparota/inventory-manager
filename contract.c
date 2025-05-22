@@ -12,6 +12,7 @@ typedef struct Node
     struct Node* link;
 }Node;
 
+//To add new item detail in list
 void add_data(Node** head,char It_name[],float Quantity,char Unit[],float Rate){
     Node*temp=(Node*)malloc(sizeof(Node));
     strcpy(temp->Item_Name,It_name);
@@ -23,6 +24,7 @@ void add_data(Node** head,char It_name[],float Quantity,char Unit[],float Rate){
     *head=temp;
 }
 
+//To delete a existing item from list
 void delete_data(Node**head,char It_name[]){
     if(*head==NULL){
         printf("Item List is already Empty\n");
@@ -49,6 +51,7 @@ void delete_data(Node**head,char It_name[]){
     printf("Item not found in the list.\n");
 }
 
+// To print item list 
 void print(Node*head){
     if (head==NULL){
         printf("Item list empty\n");
@@ -68,6 +71,7 @@ void print(Node*head){
     
 }
 
+// To check for existing item
 int item_exists(Node* head, char* name) {
     while (head != NULL) {
         if (strcmp(head->Item_Name, name) == 0)
@@ -77,7 +81,7 @@ int item_exists(Node* head, char* name) {
     return 0;
 }
 
-
+//To free list
 void free_list(Node* head) {
     Node* temp;
     while (head != NULL) {
