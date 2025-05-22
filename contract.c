@@ -81,6 +81,19 @@ int item_exists(Node* head, char* name) {
     return 0;
 }
 
+//To calculat total amount of all item
+float check_amount(Node*head){
+    if(head==NULL)
+    return -1;
+    Node*temp=head;
+    float Total_Amount=0;
+    while(temp!=NULL){
+        Total_Amount += temp->Amount;
+        temp=temp->link;
+    }
+    return Total_Amount;
+}
+
 //To free list
 void free_list(Node* head) {
     Node* temp;
@@ -101,7 +114,8 @@ int main(){
         printf("1.For add item\n");
         printf("2.For delete item\n");
         printf("3.For print list of items\n");
-        printf("Any other key to Exit\n");
+        printf("4.For other options\n");
+        printf("Any other numeric key to Exit\n");
         printf("\nEnter choice: ");
         scanf("%d",&check);
 
@@ -145,12 +159,30 @@ int main(){
 
                 }
                 else{
-                    printf("Exiting.....");
-                    free_list(head);
-                    exit(0);
+                    if(check==4){
+                        int t;
+                        printf("1.For print Total Amount of all item\n");
+                        printf("Any other numeric key to exit\n");
+                        printf("\nEnter choice: ");
+                        scanf("%d",&t);
+                        if(t==1){
+                            float Total_Amount= check_amount(head);
+                            if (Total_Amount==-1){
+                                printf("Item List is empty\n\n");
+                            }
+                            else{
+                                printf("The total amount of all item is Rs %.2f\n\n",Total_Amount);
+                            }
+                        }
+                    }
+                    else{
+                        printf("Exiting.....");
+                        free_list(head);
+                        exit(0);
+                    }
                 }
             }
         }
-    } while (check!=4);
+    } while (1);
     return 0;
 }
