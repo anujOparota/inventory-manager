@@ -1,0 +1,27 @@
+ItemName|Quantity|Unit|Rate
+Rice|5.000|kg|60.00
+Wheat Flour|10.000|kg|45.00
+Sugar|3.500|kg|42.00
+Salt|2.000|kg|18.00
+Milk|6.000|litre|52.00
+Cooking Oil|4.000|litre|135.00
+Tea Powder|0.750|kg|520.00
+Coffee Powder|0.500|kg|780.00
+Biscuits|8.000|pack|25.00
+Soap|12.000|piece|38.00
+Shampoo|5.000|bottle|180.00
+Toothpaste|6.000|tube|95.00
+Detergent|4.000|kg|110.00
+Bath Towel|3.000|piece|350.00
+Notebook|10.000|piece|45.00
+Pen|20.000|piece|10.00
+Pencil|30.000|piece|5.00
+Eraser|15.000|piece|6.00
+Water Bottle|5.000|piece|220.00
+Lunch Box|4.000|piece|280.00
+LED Bulb|6.000|piece|150.00
+Extension Cord|2.000|piece|650.00
+Mobile Charger|3.000|piece|480.00
+Headphones|2.000|piece|1200.00
+Keyboard|1.000|piece|950.00
+Mouse|2.000|piece|420.00
